@@ -1,4 +1,4 @@
-# Knapsack 0/1 Project - Comparative Algorithm Analysis
+# Knapsack 0/1 Project - Comparative Algorithm
 
 **Team:** Chaabane, Arman, Bartosz, Ahmed  
 **Date:** December 2025

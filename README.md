@@ -1,95 +1,94 @@
-# Projet Knapsack 0/1 - Analyse Comparative d'Algorithmes
+# Knapsack 0/1 Project - Comparative Algorithm Analysis
 
-**Équipe :** Chaabane, Arman, Bartosz, Ahmed  
-**Date :** Décembre 2024  
-**Cours :** Analyse d'Algorithmes
+**Team:** Chaabane, Arman, Bartosz, Ahmed  
+**Date:** December 2025
+**Course:** Algorithm Analysis
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: Academic](https://img.shields.io/badge/license-Academic-green.svg)](LICENSE)
 
 ---
 
-## Table des Matières
+## Table of Contents
 
-- [À Propos](#à-propos)
-- [Reproduction des Résultats](#reproduction-des-résultats)
-- [Installation Détaillée](#installation-détaillée)
-- [Guide d'Utilisation Complet](#guide-dutilisation-complet)
-- [Structure du Projet](#structure-du-projet)
-- [Algorithmes Implémentés](#algorithmes-implémentés)
-- [Données et Benchmarks](#données-et-benchmarks)
-- [Résultats et Analyses](#résultats-et-analyses)
-- [Problèmes Connus et Limitations](#problèmes-connus-et-limitations)
-
----
-
-## À Propos
-
-Ce projet présente une **analyse comparative exhaustive** de 16 algorithmes pour résoudre le problème du Knapsack 0/1. Notre objectif est de comprendre **quand et pourquoi** utiliser chaque algorithme selon le contexte (taille du problème, contraintes de temps, besoin d'optimalité).
-
-### Caractéristiques Principales
-
-- **16 algorithmes** implémentés de zéro (aucune bibliothèque externe pour les algos)
-- **7 types de corrélation** testés pour couvrir différents cas d'usage
-- **1029 résultats** de benchmarks sur 85 instances
-- **13 tailles différentes** (n = 4 à 10,000 items)
-- **Analyses statistiques**
-- **Guide de décision pratique** pour choisir l'algorithme optimal
-- **Code 100% reproductible** avec seeds fixées
-
-### Notre Contribution
-
-Au-delà de l'implémentation technique, nous avons créé un **guide pratique** montrant **quand et pourquoi** utiliser chaque algorithme. Chaque analyse répond à une question concrète, évitant les statistiques complexes sans utilité.
+- [About](#about)
+- [Reproducing Results](#reproducing-results)
+- [Detailed Installation](#detailed-installation)
+- [Complete Usage Guide](#complete-usage-guide)
+- [Project Structure](#project-structure)
+- [Implemented Algorithms](#implemented-algorithms)
+- [Data and Benchmarks](#data-and-benchmarks)
+- [Results and Analysis](#results-and-analysis)
+- [Known Issues and Limitations](#known-issues-and-limitations)
 
 ---
 
-## Reproduction des Résultats
+## About
 
-### Reproduction Complète
+This project presents a **comprehensive comparative analysis** of 16 algorithms to solve the Knapsack 0/1 problem. Our goal is to understand **when and why** to use each algorithm depending on the context (problem size, time constraints, optimality requirements).
 
-**Durée estimée :** ~30-60 minutes (selon votre machine)
+### Main Features
+
+- **16 algorithms** implemented from scratch (no external libraries for algorithms)
+- **4 correlation types** tested to cover different use cases
+- **1029 benchmark results** on 100+ instances
+- **13 different sizes** (n = 4 to 10,000 items)
+- **Statistical analyses**
+- **Practical decision guide** to choose the optimal algorithm
+- **100% reproducible code** with fixed seeds
+
+### Our Contribution
+
+Beyond the technical implementation, we created a **practical guide** showing **when and why** to use each algorithm. Each analysis answers a concrete question, avoiding complex statistics without utility.
+
+---
+
+## Reproducing Results
+
+### Complete Reproduction
+
+**Estimated duration:** ~30-60 minutes (depending on your machine)
 
 ```bash
-# 1. Lancer Jupyter Notebook
+# 1. Launch Jupyter Notebook
 jupyter notebook knapsack_project.ipynb
 
-# 2. Exécuter les cellules dans l'ordre :
-#    - Cellules 1-4 : Imports et structures de données
-#    - Cellules 5-30 : Implémentation des 16 algorithmes
-#    - Cellule 42 : Génération des benchmarks (OPTIONNEL - déjà fournis)
-#    - Cellule 48 : Exécution des benchmarks (~30 min)
-#    - Cellules 50-65 : Analyses et visualisations
+# 2. Execute cells in order:
+#    - Cells 1-4: Imports and data structures
+#    - Cells 5-30: Implementation of 16 algorithms
+#    - Cell 42: Benchmark generation (OPTIONAL - already provided)
+#    - Cell 48: Benchmark execution (~30 min)
+#    - Cells 50-65: Analysis and visualizations
 ```
 
-**Attention Note :** L'exécution complète des benchmarks prend du temps.
+**Important Note:** Complete benchmark execution takes time.
 
 ---
 
-## Installation Détaillée
+## Detailed Installation
 
-### Prérequis
+### Prerequisites
 
-- **Python 3.8 ou supérieur** (testé sur 3.8, 3.9, 3.10, 3.11)
-- **pip** (gestionnaire de paquets Python)
-- **Jupyter Notebook** ou **JupyterLab**
-- **8 GB RAM minimum** (16 GB recommandé pour générer de nouveaux benchmarks)
+- **Python 3.8 or higher** (tested on 3.8, 3.9, 3.10, 3.11)
+- **pip** (Python package manager)
+- **Jupyter Notebook** or **JupyterLab**
+- **8 GB RAM minimum** (16 GB recommended for generating new benchmarks)
 
-### Vérifier votre installation Python
+### Check Your Python Installation
 
 ```bash
-python --version  # Doit afficher Python 3.8 ou supérieur
-pip --version     # Doit afficher pip 20.0 ou supérieur
+python --version  # Should display Python 3.8 or higher
+pip --version     # Should display pip 20.0 or higher
 ```
 
 ### Installation
 
 ```bash
-# Bibliothèques scientifiques de base
+# Basic scientific libraries
 pip install numpy
 pip install pandas
 pip install scipy
 
-# Visualisation
+# Visualization
 pip install matplotlib
 pip install seaborn
 
@@ -101,10 +100,10 @@ pip install jupyter
 pip install notebook
 ```
 
-#### 3. Vérifier l'installation
+#### 3. Verify Installation
 
 ```python
-# Ouvrir Python et tester les imports
+# Open Python and test imports
 python -c "
 import numpy as np
 import pandas as pd
@@ -115,35 +114,35 @@ from sklearn.model_selection import ParameterGrid
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
-print('Toutes les dépendances sont installées correctement!')
+print('All dependencies are correctly installed!')
 "
 ```
 
 ---
 
-## Guide d'Utilisation Complet
+## Complete Usage Guide
 
-### Étape 1 : Comprendre la Structure du Notebook
+### Step 1: Understanding the Notebook Structure
 
-Le notebook `knapsack_project.ipynb` est organisé en 8 sections :
+The `knapsack_project.ipynb` notebook is organized in 8 sections:
 
 ```
-Section 1 : Configuration et Imports
-Section 2 : Structures de Données (Item, Problem, Solution)
-Section 3 : Parsing des Benchmarks
-Section 4 : Implémentation des 16 Algorithmes
-Section 5 : Système de Benchmarking
-Section 6 : Génération d'Instances de Test
-Section 7 : Visualisations et Analyses
-Section 8 : Optimisation des Hyperparamètres (ne fonctionne pas)
+Section 1: Configuration and Imports
+Section 2: Data Structures (Item, Problem, Solution)
+Section 3: Benchmark Parsing
+Section 4: Implementation of 16 Algorithms
+Section 5: Benchmarking System
+Section 6: Test Instance Generation
+Section 7: Visualizations and Analysis
+Section 8: Hyperparameter Optimization (not working)
 ```
 
-### Étape 2 : Exécuter les Algorithmes
+### Step 2: Execute Algorithms
 
-#### A. Tester un algorithme sur une instance simple
+#### A. Test an Algorithm on a Simple Instance
 
 ```python
-# Créer une instance manuelle
+# Create a manual instance
 items = [
     Item(0, weight=10, value=60),
     Item(1, weight=20, value=100),
@@ -151,26 +150,26 @@ items = [
 ]
 problem = Problem(items, capacity=50)
 
-# Tester différents algorithmes
+# Test different algorithms
 solution_dp = dynamic_programming(problem)
 solution_greedy = greedy_ratio(problem)
 solution_genetic = genetic_algorithm(problem, seed=42)
 
-# Comparer les résultats
-print(f"DP:      valeur={solution_dp.total_value}, temps={solution_dp.time*1000:.2f}ms")
-print(f"Greedy:  valeur={solution_greedy.total_value}, temps={solution_greedy.time*1000:.2f}ms")
-print(f"Genetic: valeur={solution_genetic.total_value}, temps={solution_genetic.time*1000:.2f}ms")
+# Compare results
+print(f"DP:      value={solution_dp.total_value}, time={solution_dp.time*1000:.2f}ms")
+print(f"Greedy:  value={solution_greedy.total_value}, time={solution_greedy.time*1000:.2f}ms")
+print(f"Genetic: value={solution_genetic.total_value}, time={solution_genetic.time*1000:.2f}ms")
 ```
 
-#### B. Charger et tester une instance de benchmark
+#### B. Load and Test a Benchmark Instance
 
 ```python
-# Charger une instance depuis un fichier
+# Load an instance from a file
 problem = parse_benchmark_file('benchmarks/generated/uncorrelated_n100_c5000.txt')
 
-print(f"Instance chargée: n={problem.n}, capacity={problem.capacity}")
+print(f"Instance loaded: n={problem.n}, capacity={problem.capacity}")
 
-# Tester un algorithme
+# Test an algorithm
 solution = genetic_algorithm(
     problem,
     population_size=100,
@@ -180,381 +179,374 @@ solution = genetic_algorithm(
     seed=42
 )
 
-print(f"Valeur: {solution.total_value}")
-print(f"Poids: {solution.total_weight}/{problem.capacity}")
-print(f"Temps: {solution.time * 1000:.2f} ms")
-print(f"Items sélectionnés: {len(solution.selected_items)}")
+print(f"Value: {solution.total_value}")
+print(f"Weight: {solution.total_weight}/{problem.capacity}")
+print(f"Time: {solution.time * 1000:.2f} ms")
+print(f"Selected items: {len(solution.selected_items)}")
 ```
 
-### Étape 3 : Générer de Nouveaux Benchmarks (OPTIONNEL)
+### Step 3: Generate New Benchmarks (OPTIONAL)
 
-
-
-### Étape 4 : Exécuter les Benchmarks Complets
+### Step 4: Execute Complete Benchmarks
 
 ```python
-# ATTENTION: Ceci prend ~30-60 minutes
+# WARNING: This takes ~30-60 minutes
 results_df = run_all_benchmarks()
 
-# Les résultats sont automatiquement sauvegardés dans:
+# Results are automatically saved in:
 # - benchmarks/generated
-# Des benchmarks avec résultats connus sont aussi présents dans benchmarks/
+# Benchmarks with known results are also present in benchmarks/
 ```
 
+### Step 5: Analyze Results
 
-### Étape 5 : Analyser les Résultats
+#### Instance Batch
 
-#### Batch d'instances
+Our benchmark generator created **66 instances** strategically distributed by size and correlation type:
 
-Notre générateur de benchmarks a créé **66 instances** réparties stratégiquement selon la taille et le type de corrélation :
 ```python
 # =============================================================================
-# GENERATOR OF BENCHMARK
+# BENCHMARK GENERATOR
 # =============================================================================
 # Types: 'uncorrelated', 'weakly_correlated', 'strongly_correlated'
 # =============================================================================
 
-# Instances de taille MOYENNE (n = 100-500)
+# MEDIUM size instances (n = 100-500)
 generate_benchmarks(n=100,  capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=6)
 generate_benchmarks(n=200,  capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=2)
 generate_benchmarks(n=500,  capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=5)
 
-# Instances de GRANDE taille (n = 1000-5000)
+# LARGE size instances (n = 1000-5000)
 generate_benchmarks(n=1000, capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=3)
 generate_benchmarks(n=2000, capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=3)
 generate_benchmarks(n=5000, capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=2)
 
-# Instance de TRÈS GRANDE taille (n = 10000)
+# VERY LARGE size instance (n = 10000)
 generate_benchmarks(n=10000, capacity=1000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'])
 
-# Exemples commentés pour d'autres configurations possibles:
+# Commented examples for other possible configurations:
 # generate_benchmarks(n=100, capacity=5000, correlation='uncorrelated')
 # generate_benchmarks(n=100, capacity=5000, correlation='strongly_correlated', count=5)
 # generate_benchmarks(n=100, capacity=5000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'])
 # generate_benchmarks(n=100, capacity=5000, correlation=['uncorrelated', 'strongly_correlated', 'weakly_correlated'], count=5)
 ```
 
-#### C. Générer les visualisations du notebook
+#### C. Generate Notebook Visualizations
 
-Exécutez simplement les cellules 50-65 du notebook. Elles génèrent :
+Simply execute cells 50-65 of the notebook. They generate:
 
-- Temps d'éxecution
-- Heatmap de couverture des tests
-- Performance par taille
-- Compris temps-qualité
-- Régression prédictive
-- Comparaisons statistiques
-- Optimisation des hyperparamètres (ne fonctionne pas correctement voir le rapport)
+- Execution times
+- Test coverage heatmap
+- Performance by size
+- Time-quality trade-off
+- Predictive regression
+- Statistical comparisons
+- Hyperparameter optimization (not working correctly, see report)
 
 ---
 
-## Structure du Projet
+## Project Structure
 
 ```
 knapsack_project/
 │
-├── knapsack_project.ipynb          # NOTEBOOK PRINCIPAL
+├── knapsack_project.ipynb          # MAIN NOTEBOOK
 │
 └── benchmarks/           
-    ├── generated/                   # Instances générées
+    ├── generated/                   # Generated instances
     │   ├── *.txt
     │   ├── *.txt
     │   ├── *.txt
     │   └── *.txt
     │
-    ├── large_scale/                 # Instances grandes tailles
-    ├── large_scale_optimum/         # Solutions optimales large_scale
-    ├── low_dimension/               # Instances petites tailles
-    └── low_dimension_optimum/       # Solutions optimales low_dimension      
+    ├── large_scale/                 # Large size instances
+    ├── large_scale_optimum/         # Optimal solutions for large_scale
+    ├── low_dimension/               # Small size instances
+    └── low_dimension_optimum/       # Optimal solutions for low_dimension      
 ```
 
 ---
 
-## Algorithmes Implémentés
+## Implemented Algorithms
 
-### 1. Algorithmes Exacts (Optimalité Garantie)
+### 1. Exact Algorithms (Guaranteed Optimality)
 
-| Algorithme | Complexité Temps | Complexité Espace | Limite Pratique | Implémentation |
-|------------|------------------|-------------------|-----------------|----------------|
-| **Brute Force** | O(2^n) | O(n) | n ≤ 23 | Cellule 6 |
-| **Dynamic Programming** | O(n×C) | O(n×C) | n ≤ 5000, C petit | Cellule 7 |
-| **DP Top-Down** | O(n×C) | O(n×C) | n ≤ 5000 | Cellule 8 |
-| **Branch and Bound** | O(2^n) ~ O(n log n) | O(n) | n ≤ 500 (variable) | Cellule 9 |
+| Algorithm | Time Complexity | Space Complexity | Practical Limit | Implementation |
+|-----------|----------------|------------------|-----------------|----------------|
+| **Brute Force** | O(2^n) | O(n) | n ≤ 23 | Cell 6 |
+| **Dynamic Programming** | O(n×C) | O(n×C) | n ≤ 5000, small C | Cell 7 |
+| **DP Top-Down** | O(n×C) | O(n×C) | n ≤ 5000 | Cell 8 |
+| **Branch and Bound** | O(2^n) ~ O(n log n) | O(n) | n ≤ 500 (variable) | Cell 9 |
 
-**Quand utiliser :**
-- Brute Force : Petites instances (n ≤ 20), vérification
-- DP : Instances moyennes (n ≤ 1000) avec capacité modérée
-- B&B : Problèmes avec bonne borne supérieure
-
----
-
-### 2. Algorithmes d'Approximation (Garantie Théorique)
-
-| Algorithme | Complexité | Garantie | Implémentation |
-|------------|------------|----------|----------------|
-| **FPTAS (ε=0.1)** | O(n²/ε) | ≥ (1-ε)×OPT | Cellule 18 |
-| **FPTAS (ε=0.05)** | O(n²/ε) | ≥ (1-ε)×OPT | Cellule 18 |
-| **FPTAS Adaptive** | O(n²/ε) | ≥ (1-ε)×OPT | Cellule 19 |
-
-** Attention Limitation connue :** Notre implémentation FPTAS a un bug de scaling qui limite n ≤ 100. Voir section [Problèmes Connus](#problèmes-connus-et-limitations).
-
-**Quand utiliser :**
-- Besoin de garantie théorique
-- Instances moyennes (n ≤ 500 après correction)
-- Compromis qualité/temps ajustable via ε
+**When to Use:**
+- Brute Force: Small instances (n ≤ 20), verification
+- DP: Medium instances (n ≤ 1000) with moderate capacity
+- B&B: Problems with good upper bound
 
 ---
 
-### 3. Heuristiques Gloutonnes (Ultra-Rapides)
+### 2. Approximation Algorithms (Theoretical Guarantee)
 
-| Algorithme | Tri Par | Complexité | Performance | Implémentation |
-|------------|---------|------------|-------------|----------------|
-| **Greedy Ratio** | value/weight ↓ | O(n log n) | 70-100% selon type | Cellule 10 |
-| **Greedy Value** | value ↓ | O(n log n) | 60-95% | Cellule 11 |
-| **Greedy Weight** | weight ↑ | O(n log n) | 50-90% | Cellule 12 |
-| **Fractional** | ratio ↓ | O(n log n) | Borne supérieure | Cellule 13 |
+| Algorithm | Complexity | Guarantee | Implementation |
+|-----------|------------|-----------|----------------|
+| **FPTAS (ε=0.1)** | O(n²/ε) | ≥ (1-ε)×OPT | Cell 18 |
+| **FPTAS (ε=0.05)** | O(n²/ε) | ≥ (1-ε)×OPT | Cell 18 |
+| **FPTAS Adaptive** | O(n²/ε) | ≥ (1-ε)×OPT | Cell 19 |
 
-**Quand utiliser :**
-- Contrainte temps stricte (< 1 ms)
-- Greedy Ratio : strongly_correlated (quasi-optimal)
-- Greedy Value : uncorrelated, inverse_strongly
-- Greedy Weight : Éviter sur inverse_strongly (très mauvais)
+**Known Limitation:** Our FPTAS implementation has a scaling bug limiting n ≤ 100. See [Known Issues](#known-issues-and-limitations) section.
 
----
-
-### 4. Métaheuristiques (Grandes Instances)
-
-| Algorithme | Paramètres Clés | Temps | Performance | Implémentation |
-|------------|-----------------|-------|-------------|----------------|
-| **Genetic Algorithm** | pop=100, gen=50 | 100-500 ms | 85-98% | Cellule 14 |
-| **Genetic Adaptive** | Adaptatifs | 100-500 ms | 87-99% (+ stable) | Cellule 15 |
-| **Simulated Annealing** | T=1000, α=0.995 | 50-200 ms | 85-97% | Cellule 16 |
-| **SA Adaptive** | Adaptatifs | 50-200 ms | 88-98% (+ stable) | Cellule 17 |
-| **Randomized** | Glouton + aléa | 5-20 ms | 70-90% | Cellule 20 |
-
-**Quand utiliser :**
-- Grandes instances (n > 1000)
-- Temps flexible (quelques secondes OK)
-- Besoin de stabilité → versions Adaptive
+**When to Use:**
+- Need for theoretical guarantee
+- Medium instances (n ≤ 500 after correction)
+- Adjustable quality/time trade-off via ε
 
 ---
 
-## Données et Benchmarks
+### 3. Greedy Heuristics (Ultra-Fast)
 
-### Format des Fichiers de Benchmark
+| Algorithm | Sort By | Complexity | Performance | Implementation |
+|-----------|---------|------------|-------------|----------------|
+| **Greedy Ratio** | value/weight ↓ | O(n log n) | 70-100% by type | Cell 10 |
+| **Greedy Value** | value ↓ | O(n log n) | 60-95% | Cell 11 |
+| **Greedy Weight** | weight ↑ | O(n log n) | 50-90% | Cell 12 |
+| **Fractional** | ratio ↓ | O(n log n) | Upper bound | Cell 13 |
 
-Nos fichiers `.txt` suivent ce format standard :
+**When to Use:**
+- Strict time constraint (< 1 ms)
+- Greedy Ratio: strongly_correlated (quasi-optimal)
+- Greedy Value: uncorrelated, inverse_strongly
+- Greedy Weight: Avoid on inverse_strongly (very poor)
+
+---
+
+### 4. Metaheuristics (Large Instances)
+
+| Algorithm | Key Parameters | Time | Performance | Implementation |
+|-----------|----------------|------|-------------|----------------|
+| **Genetic Algorithm** | pop=100, gen=50 | 100-500 ms | 85-98% | Cell 14 |
+| **Genetic Adaptive** | Adaptive | 100-500 ms | 87-99% (+ stable) | Cell 15 |
+| **Simulated Annealing** | T=1000, α=0.995 | 50-200 ms | 85-97% | Cell 16 |
+| **SA Adaptive** | Adaptive | 50-200 ms | 88-98% (+ stable) | Cell 17 |
+| **Randomized** | Greedy + random | 5-20 ms | 70-90% | Cell 20 |
+
+**When to Use:**
+- Large instances (n > 1000)
+- Flexible time (a few seconds OK)
+- Need for stability → Adaptive versions
+
+---
+
+## Data and Benchmarks
+
+### Benchmark File Format
+
+Our `.txt` files follow this standard format:
 
 ```
 100 5000
 # n capacity
-# Puis n lignes avec : value weight
+# Then n lines with: value weight
 60 10
 100 20
 120 30
 ...
 ```
 
-### Types de Corrélation Générés
+### Generated Correlation Types
 
-Nous avons généré **4 types différents** pour tester les algorithmes dans divers contextes :
+We generated **4 different types** to test algorithms in various contexts:
 
-#### 1. **Uncorrelated** (Non-corrélé)
+#### 1. **Uncorrelated**
 ```python
 weights = random(1, 100)
-values = random(1, 100)  # Indépendants
+values = random(1, 100)  # Independent
 ```
-**Usage :** Cas général, pas de structure particulière
+**Usage:** General case, no particular structure
 
 ---
 
-#### 2. **Strongly Correlated** (Fortement corrélé)
+#### 2. **Strongly Correlated**
 ```python
 weights = random(1, 100)
-values = weights  # Exactement égaux
+values = weights  # Exactly equal
 ```
-**Usage :** Teste si Greedy Ratio trouve l'optimal (devrait !)
+**Usage:** Tests if Greedy Ratio finds optimal (it should!)
 
 ---
 
-#### 3. **Weakly Correlated** (Faiblement corrélé)
+#### 3. **Weakly Correlated**
 ```python
 weights = random(1, 100)
-values = weights + noise(-15, 15)  # Proche mais avec bruit
+values = weights + noise(-15, 15)  # Close but with noise
 ```
-**Usage :** Teste robustesse au bruit
+**Usage:** Tests robustness to noise
 
 ---
 
-#### 4. **Similar Weights** (Poids similaires)
+#### 4. **Similar Weights**
 ```python
-weights = random(47, 53)  # Tous proches de 50
-values = random(1, 100)   # Valeurs variées
+weights = random(47, 53)  # All close to 50
+values = random(1, 100)   # Varied values
 ```
-**Usage :** Force Greedy Weight à être médiocre
+**Usage:** Forces Greedy Weight to be mediocre
 
 ---
 
+## Results and Analysis
 
-##  Résultats et Analyses
+### Analysis 1: Optimal Solution Rate
 
-### Analyse 1 : Taux de Solutions Optimales
+**Question:** Which algorithm finds the optimum most often?
 
-**Question :** Quel algorithme trouve l'optimal le plus souvent ?
-
-| Algorithme | % Optimal | Gap Moyen | Verdict |
-|------------|-----------|-----------|---------|
+| Algorithm | % Optimal | Avg Gap | Verdict |
+|-----------|-----------|---------|---------|
 | Dynamic Programming | 100.0% | 0.00% | ✓ OPTIMAL |
 | DP Top-Down | 100.0% | 0.00% | ✓ OPTIMAL |
 | Branch and Bound | 100.0% | 0.00% | ✓ OPTIMAL |
 | FPTAS (ε=0.05) | 99.2% | 0.15% | ~ QUASI-OPTIMAL |
 | FPTAS (ε=0.1) | 95.8% | 0.31% | ~ QUASI-OPTIMAL |
-| Greedy Ratio | 78.5% | 2.34% | ○ BON |
+| Greedy Ratio | 78.5% | 2.34% | ○ GOOD |
 | Genetic Adaptive | 12.3% | 4.21% | ○ APPROX |
 | Simulated Annealing | 8.7% | 5.12% | ○ APPROX |
 
 ---
 
-### Analyse 2 : Limites de Praticabilité (< 5 secondes)
+### Analysis 2: Practicability Limits (< 5 seconds)
 
-**Question :** Jusqu'à quelle taille puis-je utiliser chaque algorithme ?
+**Question:** Up to what size can I use each algorithm?
 
-| Algorithme | Taille Max (n) | Temps à Max | Complexité Confirmée |
-|------------|----------------|-------------|----------------------|
+| Algorithm | Max Size (n) | Time at Max | Confirmed Complexity |
+|-----------|--------------|-------------|---------------------|
 | Brute Force | 23 | 4.8s | ✓ O(2^n) |
-| Branch and Bound | 500 | Variable | ✓ Élagage dépendant |
-| Dynamic Programming | 5000 | Dépend C | ✓ O(n×C) |
-| FPTAS | 100 | 2.2s (BUG) | ✗ Devrait être plus |
-| Gloutons | 10000+ | < 1s | ✓ O(n log n) |
-| Métaheuristiques | 10000+ | Ajustable | ✓ Scalable |
+| Branch and Bound | 500 | Variable | ✓ Pruning dependent |
+| Dynamic Programming | 5000 | Depends on C | ✓ O(n×C) |
+| FPTAS | 100 | 2.2s (BUG) | ✗ Should be more |
+| Greedy | 10000+ | < 1s | ✓ O(n log n) |
+| Metaheuristics | 10000+ | Adjustable | ✓ Scalable |
 
 ---
 
-### Analyse 3 : Performance des Gloutons par Type
+### Analysis 3: Greedy Performance by Type
 
-**Question :** Quel glouton choisir selon le type de problème ?
+**Question:** Which greedy to choose according to problem type?
 
-**Résultats :**
+**Results:**
 
-| Type de Corrélation | Meilleur Glouton | Gap | Pire Glouton | Gap |
-|---------------------|------------------|-----|--------------|-----|
+| Correlation Type | Best Greedy | Gap | Worst Greedy | Gap |
+|------------------|-------------|-----|--------------|-----|
 | **Strongly Correlated** | Greedy Ratio | 0.12% ✓ | Greedy Weight | 8.45% |
 | **Uncorrelated** | Greedy Value | 3.78% | Greedy Weight | 9.21% |
 | **Weakly Correlated** | Greedy Ratio | 1.89% | Greedy Weight | 7.56% |
 | **Similar Weights** | Greedy Value/Ratio | 4.12% | Greedy Weight | 12.34% |
 
-** Remarques:**
-- Greedy Ratio **quasi-optimal** sur strongly_correlated (0.12% gap)
-- Le **critère de tri** est crucial selon la structure des données
+**Remarks:**
+- Greedy Ratio **quasi-optimal** on strongly_correlated (0.12% gap)
+- **Sorting criterion** is crucial depending on data structure
 
 ---
 
-### Analyse 4 : Arbre de Décision Pratique
+### Analysis 4: Practical Decision Tree
 
-**Question :** Quel algorithme choisir dans mon contexte ?
+**Question:** Which algorithm to choose in my context?
 
 ```
-┌─ Besoin d'OPTIMALITÉ GARANTIE ?
+┌─ Need GUARANTEED OPTIMALITY?
 │
-├─ OUI → Ai-je n×C < 10 millions ?
+├─ YES → Do I have n×C < 10 million?
 │        │
-│        ├─ OUI → DYNAMIC PROGRAMMING
-│        │        ✓ Optimal garanti
-│        │        ✓ O(n×C) prévisible
-│        │        ✗ Limité par mémoire
+│        ├─ YES → DYNAMIC PROGRAMMING
+│        │        ✓ Guaranteed optimal
+│        │        ✓ Predictable O(n×C)
+│        │        ✗ Memory limited
 │        │
-│        └─ NON → BRANCH AND BOUND
-│                 ✓ Optimal garanti
-│                 ~ Temps variable (élagage)
-│                 ✗ Peut être lent
+│        └─ NO → BRANCH AND BOUND
+│                 ✓ Guaranteed optimal
+│                 ~ Variable time (pruning)
+│                 ✗ Can be slow
 │
-└─ NON → Quelle est ma CONTRAINTE principale ?
+└─ NO → What is my MAIN CONSTRAINT?
          │
-         ├─ TEMPS STRICT (<1ms)
+         ├─ STRICT TIME (<1ms)
          │  │
-         │  └─ Quel TYPE de problème ?
+         │  └─ What TYPE of problem?
          │     ├─ strongly_correlated → GREEDY RATIO ✓ Quasi-optimal
          │     ├─ uncorrelated → GREEDY VALUE
-         │     ├
-         │     └─ autre → GREEDY RATIO (par défaut)
+         │     └─ other → GREEDY RATIO (default)
          │
-         ├─ QUALITÉ IMPORTANTE (quelques secondes OK)
+         ├─ QUALITY IMPORTANT (few seconds OK)
          │  │
          │  ├─ n < 200 → FPTAS (ε=0.05)
-         │  │            ✓ Garantie (1-ε)×OPT
-         │  │            ✓ Temps polynomial
+         │  │            ✓ Guarantee (1-ε)×OPT
+         │  │            ✓ Polynomial time
          │  │
-         │  └─ n ≥ 200 → MÉTAHEURISTIQUE
-         │               ├─ Besoin STABILITÉ → Genetic/SA Adaptive
-         │               └─ Performance max → Genetic Algorithm
+         │  └─ n ≥ 200 → METAHEURISTIC
+         │               ├─ Need STABILITY → Genetic/SA Adaptive
+         │               └─ Max performance → Genetic Algorithm
          │
-         └─ GRANDE INSTANCE (n > 1000)
+         └─ LARGE INSTANCE (n > 1000)
             │
-            └─ SIMULATED ANNEALING ou GENETIC ALGORITHM
-               ✓ Seuls à passer l'échelle
-               ~ Temps ajustable
-               ~ Qualité non garantie mais bonne (85-98%)
+            └─ SIMULATED ANNEALING or GENETIC ALGORITHM
+               ✓ Only ones that scale
+               ~ Adjustable time
+               ~ Quality not guaranteed but good (85-98%)
 ```
 
-**Tableau récapitulatif :**
+**Summary Table:**
 
-| Critère | DP | B&B | Greedy | FPTAS | Genetic | SA |
-|---------|----|----|--------|-------|---------|-----|
+| Criterion | DP | B&B | Greedy | FPTAS | Genetic | SA |
+|-----------|----|----|--------|-------|---------|-----|
 | Optimal | ✓ | ✓ | ✗ | ~ | ✗ | ✗ |
-| Rapide (<1ms) | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ |
+| Fast (<1ms) | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ |
 | Scalable (n>1000) | ✗ | ✗ | ✓ | ~ | ✓ | ✓ |
 | Stable | ✓ | ✓ | ✓ | ✓ | ~ | ~ |
-| Mémoire OK | ✗ | ✓ | ✓ | ~ | ✓ | ✓ |
+| Memory OK | ✗ | ✓ | ✓ | ~ | ✓ | ✓ |
 
 ---
 
-## Problèmes Connus
+## Known Issues and Limitations
 
-### FPTAS - Dysfonctionnement au-delà de n=100
+### FPTAS - Malfunction Beyond n=100
 
-**Symptômes observés :**
-- FPTAS ne fonctionne pas pour n > 100
-- Temps d'exécution anormalement élevés :
-  - n=100, ε=0.05 : 2222 ms (vs 21 ms pour DP)
-  - n=100, ε=0.1 : 1087 ms (vs 21 ms pour DP)
-- Ratio: FPTAS est 100× plus lent que DP alors qu'il devrait être comparable !
+**Observed Symptoms:**
+- FPTAS does not work for n > 100
+- Abnormally high execution times:
+  - n=100, ε=0.05: 2222 ms (vs 21 ms for DP)
+  - n=100, ε=0.1: 1087 ms (vs 21 ms for DP)
+- Ratio: FPTAS is 100× slower than DP while it should be comparable!
 
-**Cause identifiée :**
+**Identified Cause:**
 
-L'erreur provient de la formule de scaling dans la cellule 18 :
+The error comes from the scaling formula in cell 18:
 
 ```python
-# NOTRE CODE (INCORRECT):
+# OUR CODE (INCORRECT):
 K = (epsilon * v_max) / n
 
-# Exemple: n=200, v_max=1000, ε=0.1
-# K = (0.1 × 1000) / 200 = 0.5  ← K trop petit!
+# Example: n=200, v_max=1000, ε=0.1
+# K = (0.1 × 1000) / 200 = 0.5  ← K too small!
 
-# Résultat:
-# scaled_value = floor(500 / 0.5) = 1000  ← 2x plus grand!
+# Result:
+# scaled_value = floor(500 / 0.5) = 1000  ← 2x larger!
 # V_scaled = Σ scaled_values ≈ 200,000   ← Explosion!
-# Tableau DP: n × V_scaled = 200 × 200,000 = 40M cellules
+# DP table: n × V_scaled = 200 × 200,000 = 40M cells
 ```
 
-**Solution proposée :**
+**Proposed Solution:**
 
 ```python
-# FORMULE CORRECTE:
+# CORRECT FORMULA:
 K = max(1, (epsilon * v_max) / (2 * n))
 
-# Ou ajuster epsilon pour grandes instances:
+# Or adjust epsilon for large instances:
 if n > 100:
     epsilon_adjusted = epsilon * (n / 100)
     K = max(1, (epsilon_adjusted * v_max) / n)
 ```
 
-**Impact sur les résultats :**
-- Heatmap de couverture : cellules FPTAS vides pour n > 100
-- Graphiques de performance : FPTAS absents des grandes tailles
+**Impact on Results:**
+- Coverage heatmap: FPTAS cells empty for n > 100
+- Performance graphs: FPTAS absent from large sizes
 
-**Statut : **Identifié et documenté** dans le rapport (section 5.5). Non corrigé dans le code pour préserver l'authenticité des résultats présentés.
+**Status:** **Identified and documented** in the report (section 5.5). Not corrected in the code to preserve authenticity of presented results.
 
 ---
-
-
-**"Il n'y a pas de meilleur algorithme universel - le contexte détermine le choix optimal."**

@@ -9,7 +9,7 @@
 
 ---
 
-## 📋 Table des Matières
+## Table des Matières
 
 - [À Propos](#à-propos)
 - [Reproduction des Résultats](#reproduction-des-résultats)
@@ -121,7 +121,7 @@ print('Toutes les dépendances sont installées correctement!')
 
 ---
 
-## 📖 Guide d'Utilisation Complet
+## Guide d'Utilisation Complet
 
 ### Étape 1 : Comprendre la Structure du Notebook
 
@@ -201,9 +201,6 @@ results_df = run_all_benchmarks()
 # Des benchmarks avec résultats connus sont aussi présents dans benchmarks/
 ```
 
-### Étape 5 : Analyser les Résultats
-
-#### Batch d'instances
 
 ### Étape 5 : Analyser les Résultats
 
@@ -251,14 +248,14 @@ Exécutez simplement les cellules 50-65 du notebook. Elles génèrent :
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 knapsack_project/
 │
-├── knapsack_project.ipynb          # ★ NOTEBOOK PRINCIPAL ★
+├── knapsack_project.ipynb          # NOTEBOOK PRINCIPAL
 │
-└── benchmarks/                      # ★ TES DONNÉES ★
+└── benchmarks/           
     ├── generated/                   # Instances générées
     │   ├── *.txt
     │   ├── *.txt
